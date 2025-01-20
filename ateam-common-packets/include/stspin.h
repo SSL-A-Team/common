@@ -103,10 +103,11 @@ typedef struct MotorResponse_Params_Packet {
     float torque_i_max;
     uint16_t cur_clamp;
 
+    uint32_t git_hash;
     uint16_t git_dirty: 1;
     uint16_t reserved: 15;
 } __attribute__((packed)) MotorResponse_Params_Packet;
-assert_size(MotorResponse_Params_Packet, 44);
+assert_size(MotorResponse_Params_Packet, 48);
 
 typedef struct MotorResponse_Motion_Packet {
     uint8_t master_error : 1;
